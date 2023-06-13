@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>Weather App - Python PCAP</title>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+  <nav class="row" style="background: #337ab7; color: white;">
+    <h2 class="col-md-3 text-center">Weather App - Python PCAP class</h2>
+  </nav>
+  <br />
+  <br />
+  <center class="row">
+    <form method="post" class="col-md-6 col-md-offset-3">
+      <div class="input-group"><input type="text" class="form-control" name="city"placeholder="Search">
+        <div class="input-group-btn">
+          <button class="btn btn-primary" type="submit">
+            <i class="glyphicon glyphicon-search"></i>
+          </button>
+        </div>
+        <form>
+  </center>
+  <div class="row">
+    {% if data.country_code and data.coordinate and data.temp and data.pressure and data.humidity %}
+    <div class="col-md-6 col-md-offset-3">
+      <h2>Country code: {{data.country_code}}</h2>
+        <h3>City name: {{data.cityname}}</h3>
+        <h3>Coordinate: {{data.coordinate}}</h3>
+        <h3>Temp (in kelvin): {{data.temp}}</h3>
+        <h3>Temp (in celcius): {{data.temp_cel}}</h3>
+        <h3>Pressure (hPa): {{data.pressure}} </h3>
+        <h3>Humidity (%): {{data.humidity}}</h3>
+    </div>
+    {% endif %}
+  </div>
+</body>
+
+</html>
